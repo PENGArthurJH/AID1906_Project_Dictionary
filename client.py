@@ -35,8 +35,12 @@ page2 = """
 def signin():
     while True:
         print(page2)
-        opt2 = input("Please enter your order:")
-        if opt2 == "check a word":
+        opt2 = input("Please enter your order:").strip()
+        if opt2 == "check a word":#查单词
+            word = input("Please enter a word:").strip().encode()
+            s.send(b"4")
+            sleep(0.1)
+            s.send(word)
             print("dictionary")
         elif opt2 == "sign out":
             return 2
